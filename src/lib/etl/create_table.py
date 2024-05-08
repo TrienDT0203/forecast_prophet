@@ -1,7 +1,7 @@
 import sqlite3
 import sql_queries as sq
 
-db_conn = sqlite3.connect('./../../_data_raw/fa_database.db')
+db_conn = sqlite3.connect(r'.\data\database\db_test.db')
 
 # create tables in create_table_list
 for table in sq.create_table_list:
