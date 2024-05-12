@@ -2,9 +2,9 @@
 pip install -r requirement.txt
 
 :: init 2-folders which are _data_forecast and _data_raw
-mkdir _data_forecast
-mkdir _data_raw
+mkdir data/database
+mkdir data/data_forecast
 
 :: init database
-cd _script/create_database
+cd src\lib\etl
 python create_table.py
