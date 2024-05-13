@@ -1,5 +1,5 @@
 :: This command use to install require library to run model
-pip install -r requirement.txt
+pip install -r setup/requirement.txt
 
 :: init 2-folders which are _data_forecast and _data_raw
 mkdir data/database
