@@ -137,13 +137,13 @@ class ETL():
             db_conn.close()
         
         #call API to get new data
-        print(f'Start fetching data from bigquery at : {str(datetime.now())} \n')
-        print(f'Finished fetching data from bigquery at: {str(datetime.now())} \n')
         new_data = self.extract_bigquery_data(start_date= last_date, table_name= table_name)
-
         
         # insert into local db
+        print(f'Start update data from bigquery at : {str(datetime.now())} \n')
         update_status = self.ingest_data_to_local_db(data_ingest=new_data, table_name= table_name)
+        print(f'Finished fetching data from bigquery at: {str(datetime.now())} \n')
+
         if update_status['status'] == 'unsuccess':
             print(update_status['error'])
         else:
